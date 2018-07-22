@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legacy Sender</title>
+</head>
+<body>
+<script>
+
+  var data = {name: "Salvatore"};
+
+  setTimeout(function () {
+      openPopup(window.location.href.substr(0, window.location.href.lastIndexOf("/")) + "/index.html", data);
+    }, 2000
+  )
+  ;
+
+  function openPopup(url, payload) {
+    console.log("my payload: ", payload);
+    var domain = "http://" + window.location.host
+    var nuovoSistemaPopup = window.open(url, '_blank');
+    setTimeout(function () {
+      var message = JSON.stringify(payload)
+      nuovoSistemaPopup.postMessage(message, domain);
+    }, 2000);
+  }
+
+
+  window.addEventListener('message', function (event) {
+    var domain = "http://" + window.location.host
+    if (event.origin !== domain) return;
+    var receivedPayload = JSON.parse(event.data);
+    console.log("new payload: ", receivedPayload);
+    currentFormObject().execPlugin("updatePolimetrica", receivedPayload);
+  }, false);
+</script>
+</body>
+</html>

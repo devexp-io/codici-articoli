@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Legacy Sender</title>
+</head>
+<body>
+
+<button type="button" onclick="startSending()">INVIA</button>
+
+<input type="hidden" id="idInput">
+
+<script>
+
+  var data = {name: "Salvatore"};
+
+  function startSending() {
+    openPopup(window.location.href.substr(0, window.location.href.lastIndexOf("/")) + "/index.html", data);
+  }
+
+
+  function openPopup(url, payload) {
+
+    var domain = "http://" + window.location.host
+    var nuovoSistemaPopup = window.open(url, '_blank');
+    setTimeout(function () {
+      var message = JSON.stringify(payload)
+      nuovoSistemaPopup.postMessage(message, domain);
+    }, 2000);
+  }
+
+
+  window.addEventListener('message', function (event) {
+    var domain = "http://" + window.location.host
+    if (event.origin !== domain) return;
+    var receivedPayload = JSON.parse(event.data);
+    console.log("nuovo messaggio modificato: ", receivedPayload);
+    document.getElementById("idInput").value = event.data;
+  }, false);
+</script>
+</body>
+</html>
