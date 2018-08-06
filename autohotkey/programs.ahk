@@ -1,12 +1,12 @@
-NotepadPP=..\apps\PortableApps\PortableApps\Notepad++Portable\Notepad++Portable.exe
+NotepadPP=..\apps\Notepad++Portable\Notepad.exe
 Eclipse=P:\dev\eclipse\eclipse.exe
-Photoshop=P:\Dropbox\apps\PhotoshopPortable\Photoshop64Portable.exe
-Inkscape=..\apps\PortableApps\PortableApps\InkscapePortable\InkscapePortable.exe
+Inkscape=..\apps\InkscapePortable\InkscapePortable.exe
 ScreenCapture=..\apps\screen capture - images\FSCapture.exe
 PortableApps=..\apps\PortableApps\Start.exe
-VLC=..\apps\PortableApps\PortableApps\VLCPortable\VLCPortable.exe
-Skype=P:\Dropbox\apps\PortableApps\PortableApps\SkypePortable\SkypePortable.exe
-FileZilla=P:\Dropbox\apps\PortableApps\PortableApps\FileZillaPortable\FileZillaPortable.exe
+VLC=..\apps\VLCPortable\VLCPortable.exe
+Skype=P:\Dropbox\apps\SkypePortable\SkypePortable.exe
+FileZilla=P:\Dropbox\apps\FileZillaPortable\FileZilla.exe
+
 
 ;pdfedit=..\apps\PDFEditPortable\Portable Infix Pro PDF Editor v4.25.exe
 ;Cmder=P:\Dropbox\apps\cmder\Cmder.exe
